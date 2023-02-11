@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 
 def post_list(request):
-    return render(request, 'main/post_list.html', {})
+    return render(request, 'main/post_list.html', {"title": "Блог про изучениe Django"})

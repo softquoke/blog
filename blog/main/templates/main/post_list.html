@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
 </head>
 <body>
-    <h1>Hello world</h1>
+    <div class="container">
+        <h1><p>{{title}}</p></h1>
+        <p>Начало получилось очень интересным. Много не получалось, но так как до этого уже пробовал этим заниматься 
+            многие моменты решились сами собой
+        </p> 
+    </div>
 </body>
 </html>

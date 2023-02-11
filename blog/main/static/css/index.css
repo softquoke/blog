@@ -1,0 +1,32 @@
+* {
+    margin-top: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(29, 29, 29);
+    font-weight: 200;
+}
+
+body {
+    height: 1000px;
+    background-color: rgb(251, 251, 251);
+}
+
+h1 {
+    
+}
+
+h1 > p {
+    display: inline-block;
+    block-size: auto;
+    margin: 0;
+    background-color: rgba(213, 236, 255, 0.365);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px;
+    width: 600px;
+    height: 100%;
+    background-color: white;
+}
+
