@@ -40,25 +40,25 @@ ul, ol {
 }
 
 li {
-    color: rgb(117, 117, 117);
+    color: rgb(73, 73, 73);
     line-height: 1.5;
     transition: 0.1s linear;
 }
 
 li:hover {
-    color: rgb(44, 44, 44);
+    color: rgb(26, 26, 26);
 }
 
-header > .container {
+.container {
     margin: 0 30px;
     padding: 15px 0px;
     width: 650px;
     background-color: white;
 }
 
-.container {
+/* .container {
     margin: 0 auto;
     padding: 15px 30px;
     width: 650px;
     background-color: white;
-}
+} */
