@@ -1,39 +1,25 @@
+{% extends 'main/base.html' %} 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static "css/index.css" %}">
-</head>
-<header>
-    <div class="container">
-        <a href="https://github.com/softquoke">softquoke´</a> <br>
-        <h2><p>Django</p></h2>
-    </div>
-    <!-- <hr> -->
-</header>
-<body>
-    
+
+{% block content %}    
     <div class="container">
 
         <ul reversed>
-            <a href=""><li>Новые ошибки</li></a>
-            <a href=""><li>Старые ошибки и как они повлияли на процесс</li></a>
-            <a href=""><li>Начало. Почему ведется этот блог</li></a>
+            {% for post in posts%}
+                <a href="{% url 'post_detail' pk=post.pk %}"><li>{{ post.title }}</li></a>
+            {% endfor %}
         </ul>
-        <!-- <dl>
-            <dt>Hummus</dt>
-            <dd>A thick dip/sauce generally made from chick peas blended with tahini, lemon juice, salt, garlic, and other ingredients.</dd>
-            <dt>Pita</dt>
-            <dd>A soft, slightly leavened flatbread.</dd>
-            <dt>Halloumi</dt>
-            <dd>A semi-hard, unripened, brined cheese with a higher-than-usual melting point, usually made from goat/sheep milk.</dd>
-            <dt>Green salad</dt>
-            <dd>That green healthy stuff that many of us just use to garnish kebabs.</dd>
-          </dl> -->
+        
     </div>
-</body>
-</html>
+{% endblock content %}
+
+<!-- <dl>
+<dt>Hummus</dt>
+<dd>A thick dip/sauce generally made from chick peas blended with tahini, lemon juice, salt, garlic, and other ingredients.</dd>
+<dt>Pita</dt>
+<dd>A soft, slightly leavened flatbread.</dd>
+<dt>Halloumi</dt>
+<dd>A semi-hard, unripened, brined cheese with a higher-than-usual melting point, usually made from goat/sheep milk.</dd>
+<dt>Green salad</dt>
+<dd>That green healthy stuff that many of us just use to garnish kebabs.</dd>
+</dl> -->
