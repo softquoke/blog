@@ -2,13 +2,14 @@
 {% load static %}
 
 {% block content %}    
-    <div class="container">
-
-        <ul reversed>
-            {% for post in posts%}
-                <a href="{% url 'post_detail' pk=post.pk %}"><li>{{ post.title }}</li></a>
-            {% endfor %}
-        </ul>
+<div class="container">
+    <ul reversed>
+        {% for post in posts%}
+        <a href="{% url 'post_detail' pk=post.pk %}"><li>{{ post.title }}</li></a>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'post_new' %}">Новый пост</a>
         
     </div>
 {% endblock content %}
