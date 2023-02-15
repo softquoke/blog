@@ -23,14 +23,6 @@
                 </a>
             </li>
         {% endfor %}
-        {% for post in posts%}
-            <li class="post">
-                <span class="publish_date">{{post.created_date}}</span> <br>
-                <a href="{% url 'post_detail' pk=post.pk %}" class="post-link">
-                    <span class="numberOfPost" id="{{post.pk}}"></span>  {{ post.title }} 
-                </a>
-            </li>
-        {% endfor %}
     </ul>
 </div>
 
