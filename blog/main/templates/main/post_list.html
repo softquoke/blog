@@ -17,7 +17,6 @@
     <ul>
         {% for post in posts%}
             <li class="post">
-                {% comment %} <hr> {% endcomment %}
                 <span class="publish_date">{{post.created_date}}</span> <br>
                 <a href="{% url 'post_detail' pk=post.pk %}" class="post-link">
                     <span class="numberOfPost" id="{{post.pk}}"></span>  {{ post.title }} 
@@ -26,7 +25,6 @@
         {% endfor %}
         {% for post in posts%}
             <li class="post">
-                {% comment %} <hr> {% endcomment %}
                 <span class="publish_date">{{post.created_date}}</span> <br>
                 <a href="{% url 'post_detail' pk=post.pk %}" class="post-link">
                     <span class="numberOfPost" id="{{post.pk}}"></span>  {{ post.title }} 
@@ -37,14 +35,3 @@
 </div>
 
 {% endblock content %}
-
-<!-- <dl>
-<dt>Hummus</dt>
-<dd>A thick dip/sauce generally made from chick peas blended with tahini, lemon juice, salt, garlic, and other ingredients.</dd>
-<dt>Pita</dt>
-<dd>A soft, slightly leavened flatbread.</dd>
-<dt>Halloumi</dt>
-<dd>A semi-hard, unripened, brined cheese with a higher-than-usual melting point, usually made from goat/sheep milk.</dd>
-<dt>Green salad</dt>
-<dd>That green healthy stuff that many of us just use to garnish kebabs.</dd>
-</dl> -->
