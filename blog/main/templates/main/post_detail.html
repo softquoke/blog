@@ -3,12 +3,11 @@
 
 
 {% block content %}
-    <div class="container">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.text }}</p>
-        {{post.created_date}}
-        <a href="{% url 'post_edit' pk=post.pk%}">Редактировать</a>
-    </div>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.text }}</p>
+    {{post.created_date}}
+    <a href="{% url 'post_edit' pk=post.pk%}">Редактировать</a>
+
 {% endblock content %}
 
 

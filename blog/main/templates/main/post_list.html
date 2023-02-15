@@ -1,17 +1,25 @@
 {% extends 'main/base.html' %} 
 {% load static %}
 
+{% block links %}
+<script src="{% static 'js/countdown.js' %}"></script>
+{% endblock links %}
+
+
+
 {% block content %}    
-<div class="container">
-    <ul reversed>
+<div class="posts">
+    <ul>
         {% for post in posts%}
-        <a href="{% url 'post_detail' pk=post.pk %}"><li>{{ post.title }}</li></a>
+            <li class="post-title">
+                <span class="publish_date">{{post.created_date}}</span> <br>
+                <a href="{% url 'post_detail' pk=post.pk %}" class="post-link">
+                    <span class="numberOfPost" id="{{post.pk}}"></span>  {{ post.title }} 
+                </a>
+            </li>
         {% endfor %}
     </ul>
-    <br>
-    <a href="{% url 'post_new' %}">Новый пост</a>
-        
-    </div>
+</div>
 {% endblock content %}
 
 <!-- <dl>

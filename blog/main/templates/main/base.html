@@ -6,17 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>softquoke´</title>
-    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block links %}
+    {% endblock links %}
+
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="https://github.com/softquoke" target="_blank">softquoke´</a> <br>
-            <h2>Django</h2>
+        <div class="header-container">
+            <div class="header-logo">
+                <h2><a href="{% url 'post_list' %}" target="">softquoke´ in Django</a></h2>
+            </div>
+            {% if user.is_authenticated%}
+                <div class="functions">
+                    <a href="{% url 'post_new' %}"><button class="btn btn-base">Новый пост</button></a>
+                </div>
+            {% endif %}
         </div>
     </header>
-    <hr>
-    {% block content %}
-    {% endblock content %}
+    
+    {% comment %} <hr> {% endcomment %}
+    <div class="container">
+        <div class="content">
+
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
 </body>
 </html>

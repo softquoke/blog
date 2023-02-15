@@ -3,7 +3,7 @@ from .models import Post
 from .forms import PostForm
 
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.order_by('-pk')
     return render(request, 'main/post_list.html', {"title": "softquoké", "posts": posts})
 
 def post_detail(request, pk):
