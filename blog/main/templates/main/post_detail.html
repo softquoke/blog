@@ -1,12 +1,35 @@
 {% extends 'main/base.html' %} 
 {% load static %}
 
+{% block links %}
+<script src="{% static 'js/countdown.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+{% endblock links %}
+
+
 
 {% block content %}
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.text }}</p>
-    {{post.created_date}}
-    <a href="{% url 'post_edit' pk=post.pk%}">Редактировать</a>
+
+<div class="post">
+    
+    <div class="post-id">
+        <span class="numberOfPost" id="{{post.pk}}"></span>
+    </div>
+    <span class="publish_date">{{post.created_date}}</span> <br>
+    <a href="{% url 'post_detail' pk=post.pk %}" class="post-title">
+        {{ post.title }} 
+    </a>
+    <div class="post-text">
+        <p>{{post.text}}</p>
+    </div>
+    {% comment %} <hr> {% endcomment %}
+</div>
+<div class="functions">
+    {% if user.is_authenticated%}
+        <a href="{% url 'post_new' %}"><button class="btn btn-base">Редактировать</button></a>
+    {% endif %}
+</div>
+
 
 {% endblock content %}
 
