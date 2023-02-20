@@ -1,12 +1,33 @@
 {% extends 'main/base.html' %} 
 {% load static %}
 
+{% block links %}
+<script src="{% static 'js/countdown.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+{% endblock links%}
 
 {% block content %}
 
 <h2>Редактирование</h2>
-<form method="post"> {% csrf_token %}
-	{{form.as_p}}
-	<button type="submit">Сохранить</button>
-</form>
+<div class="post">
+
+	<div class="post-id">
+		<span class="numberOfPost" id="{{pk}}"></span>
+	</div>
+	<form method="post"> {% csrf_token %}
+		
+		<div class="fieldWrapper">
+			{{ form.title }}		
+		</div>
+
+		<div class="fieldWrapper">
+			{{ form.text }}
+		</div>
+
+		{{ form.title.errors }}
+		{{ form.title.errors }}
+		
+		<button type="submit">Сохранить</button>
+	</form>
+</div>
 {% endblock content %}

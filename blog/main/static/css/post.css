@@ -16,6 +16,7 @@
 .post {
     border-top: 1px solid rgb(216, 216, 216);
     padding-top: 10px;
+	background-color: black;
 }
 
 .post-title {
@@ -30,3 +31,9 @@
     font-size: 1.1em;
     text-align: justify;
 }
+
+input {
+	font-size: 1.7em;
+	padding: 10px 3px;
+}
+

@@ -4,7 +4,19 @@
 {% block content %}
 <h2>Новый пост</h2>
 <form method="post"> {% csrf_token %}
-{{form.as_p}}
-<button type="submit">Сохранить</button>
+
+	<div class="fieldWrapper">
+		{{ form.title }}
+		
+	</div>
+
+	<div class="fieldWrapper">
+		{{ form.text }}
+	</div>
+
+	{{ form.title.errors }}
+	{{ form.title.errors }}
+	
+	<button type="submit">Сохранить</button>
 </form>
 {% endblock content%}
